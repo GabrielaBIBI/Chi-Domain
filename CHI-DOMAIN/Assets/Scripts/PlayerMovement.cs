@@ -1,9 +1,6 @@
 using UnityEngine;
 
-using System.Collection.Generic;
-using UnityEngine;
-
-public class PlayerController : MonoBehaviour
+public class PlayerMovement
 {
     public float moveSpeed = 5f;
     private Rigidbody rb;
