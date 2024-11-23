@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement
+public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     private Rigidbody rb;
@@ -23,10 +23,10 @@ public class PlayerMovement
         Vector3 movePlayer = new Vector3 (Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
 
         movePlayer.Normalize();
-        rb.velocity = movePlayer * moveSpeed * Time.deltatime;
+        //rb.linearVelocity = movePlayer * moveSpeed * Time.deltatime;
         //moveVelocity = movePlayer * moveSpeed;
 
-        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        /*Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
         PlayerController groundPlane = new PlayerController (Vector3.up, Vector3.zero);
         float ray Length;
         if (groundPlane.Raycast(cameraRay, out rayLenght))
@@ -35,7 +35,7 @@ public class PlayerMovement
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
 
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
-        }
+        }*/
 
 
         /*if (movePlayer != Vector3.zero)
