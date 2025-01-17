@@ -157,6 +157,9 @@ GameObject:
   - component: {fileID: 362178155}
   - component: {fileID: 362178154}
   - component: {fileID: 362178156}
+  - component: {fileID: 362178157}
+  - component: {fileID: 362178158}
+  - component: {fileID: 362178159}
   m_Layer: 0
   m_Name: shaolin_character
   m_TagString: Untagged
@@ -228,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 362178153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.58, y: 3.6235997e-17, z: -5.73}
+  m_LocalPosition: {x: 24.21, y: 3.6235997e-17, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -247,6 +250,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeZAxis: 1
+--- !u!114 &362178157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362178153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca0722bf2653d34ebfc9b99124ebc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 569725000}
+  speed: 10
+  followDistance: 1
+--- !u!135 &362178158
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362178153}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 1.5, z: 0}
+--- !u!54 &362178159
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362178153}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 2
 --- !u!1 &569724999
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0071150378d618140b4481f4175eede3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 15
   groundDistance: 0
   terrainLayer:
     serializedVersion: 2
@@ -481,6 +547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7918335002988649766, guid: b4abc3945fd59cb49902fe98c8e6a810, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e331152a9874aa41bd4d9851a3003a7, type: 2}
     - target: {fileID: -7029948723529949830, guid: b4abc3945fd59cb49902fe98c8e6a810, type: 3}
       propertyPath: m_Layer
       value: 3
