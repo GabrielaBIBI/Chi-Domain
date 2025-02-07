@@ -17,13 +17,11 @@ public class HealthBar3D : MonoBehaviour
     // outro codigo
     public float vida = 100f; // Vida inicial do jogador
 
-
-
-
-    void Start()
-    {
-        
+    public Slider slider;
+    public void AlterarVida(float vidaSlider){
+        slider.value = vidaSlider;
     }
+
     
     private void Update()
     {
@@ -68,6 +66,7 @@ public class HealthBar3D : MonoBehaviour
                 TakeDamage(inimigo.dano);
                 // Subtrai a vida do jogador
                 vida -= inimigo.dano;
+                AlterarVida(vida);
                 // Debug.Log("Vida do jogador: " + vida);
                 // Verifica se o jogador morreu
                 //if (vida <= 0)
