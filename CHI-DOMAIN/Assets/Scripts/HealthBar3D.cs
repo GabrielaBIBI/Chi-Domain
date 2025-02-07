@@ -13,6 +13,13 @@ public class HealthBar3D : MonoBehaviour
     public float currentHealth = 100f;
     public float maxHealth = 100f;
 
+
+    // outro codigo
+    public float vida = 100f; // Vida inicial do jogador
+
+
+
+
     void Start()
     {
         
@@ -29,6 +36,7 @@ public class HealthBar3D : MonoBehaviour
             healthBarCanvas.transform.position = target.position + offset;
             healthBarCanvas.transform.forward = Camera.main.transform.forward; // Sempre voltado para a câmera
         }
+
     }
 
     public void TakeDamage(float damage)
@@ -44,4 +52,40 @@ public class HealthBar3D : MonoBehaviour
             healthBarFill.fillAmount = currentHealth / maxHealth; // Atualiza a proporção da barra
         }
     }
+
+
+
+    // outro codigo
+    void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se colidiu com um objeto que tem a tag "Inimigo"
+        if (collision.gameObject.CompareTag("Inimigo"))
+        {
+            // Acessa o script do inimigo para pegar o dano
+            Inimigo inimigo = collision.gameObject.GetComponent<Inimigo>();
+            if (inimigo != null)
+            {
+                TakeDamage(inimigo.dano);
+                // Subtrai a vida do jogador
+                vida -= inimigo.dano;
+                // Debug.Log("Vida do jogador: " + vida);
+                // Verifica se o jogador morreu
+                //if (vida <= 0)
+                
+                if (currentHealth <= 0)
+                {
+                    Morrer();
+                }
+            }
+        }
+    }
+    void Morrer()
+    {
+        Debug.Log("Jogador morreu!");
+        // Aqui você pode adicionar lógica para reiniciar o jogo, exibir uma tela de game over, etc.
+    }
 }
+
+
+
+
