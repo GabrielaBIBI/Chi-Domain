@@ -3,7 +3,7 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {
     public float dano = 50f; // Dano que o inimigo causa
-    public float vidaInimigo = 100f;
+    //public float vidaInimigo = 100f;
 
     public Transform player;  // Referência ao jogador
     public float speed = 5f;  // Velocidade de movimento do seguidor
@@ -19,8 +19,8 @@ public class Inimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vidaInimigo > 0) 
-        {
+        //if (vidaInimigo > 0) 
+        //{
             if (player != null)
             {
                 // Calcular a posição desejada para seguir o jogador
@@ -37,7 +37,7 @@ public class Inimigo : MonoBehaviour
                     transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
                 }
             }
-        }
+        //}
 
     }
 
@@ -46,7 +46,7 @@ public class Inimigo : MonoBehaviour
         // Verifica se colidiu com um objeto que tem a tag "Espada"
         if (collision.gameObject.CompareTag("Espada"))
         {
-            vidaInimigo -= 100f;
+            //vidaInimigo -= 100f;
             MatarInimigo();
             // Acessa o script da espada para pegar o dano
             //Espada espada = collision.gameObject.GetComponent<Espada>();
