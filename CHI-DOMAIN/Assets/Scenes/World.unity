@@ -424,7 +424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dano: 50
-  vidaInimigo: 100
   player: {fileID: 569725000}
   speed: 5
   followDistance: 2
@@ -935,7 +934,7 @@ PrefabInstance:
     - target: {fileID: -7918335002988649766, guid: b4abc3945fd59cb49902fe98c8e6a810, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9890e2b204ad76443adaf4b8adcff5e8, type: 2}
+      objectReference: {fileID: 2100000, guid: a30d3b30d7319534ca7776e9a87a65f0, type: 2}
     - target: {fileID: -7029948723529949830, guid: b4abc3945fd59cb49902fe98c8e6a810, type: 3}
       propertyPath: m_Layer
       value: 3
