@@ -15,4 +15,31 @@ public class Espada : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se colidiu com um objeto que tem a tag "Inimigo"
+        if (collision.gameObject.CompareTag("Inimigo"))
+        {
+            // Acessa o script do inimigo para pegar o dano
+            Inimigo inimigo = collision.gameObject.GetComponent<Inimigo>();
+            if (inimigo != null)
+            {
+                //MatarInimigo(inimigo.vidaInimigo);
+                Destroy (collision.gameObject);
+                
+                
+            }
+        }
+    }
+
+    /*
+    public void MatarInimigo(float vidaInimigo)
+    {
+        if (vidaInimigo <= danoEspada)
+        {
+            Destroy (collision.gameObject);
+        }
+    } 
+    */
 }

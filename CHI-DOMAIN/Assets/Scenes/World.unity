@@ -271,8 +271,8 @@ GameObject:
   - component: {fileID: 362178154}
   - component: {fileID: 362178156}
   - component: {fileID: 362178158}
-  - component: {fileID: 362178159}
   - component: {fileID: 362178160}
+  - component: {fileID: 362178159}
   m_Layer: 0
   m_Name: shaolin_character
   m_TagString: Inimigo
@@ -379,7 +379,7 @@ SphereCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 1.5
@@ -408,8 +408,8 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
+  m_Interpolate: 2
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!114 &362178160
 MonoBehaviour:
@@ -424,9 +424,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dano: 50
+  danoPlayer: 100
+  vidaInimigo: 100
   player: {fileID: 569725000}
   speed: 5
   followDistance: 2
+  giroMorte: -180
 --- !u!1 &371549565
 GameObject:
   m_ObjectHideFlags: 0
